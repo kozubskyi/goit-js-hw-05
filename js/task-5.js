@@ -72,10 +72,8 @@ class Car {
    * не больше чем значение свойства maxSpeed
    */
   accelerate(value) {
-    let totalSpeed = this.speed + value;
-    if (totalSpeed <= this.maxSpeed) {
-      this.speed = totalSpeed;
-      return this.speed;
+    if (this.speed + value <= this.maxSpeed) {
+      return (this.speed += value);
     }
     console.log(
       'Операция не была проведена поскольку итоговая скорость будет больше максимальной скорости',
@@ -87,10 +85,8 @@ class Car {
    * при условии что результирующая скорость не меньше нуля
    */
   decelerate(value) {
-    let totalSpeed = this.speed - value;
-    if (totalSpeed >= 0) {
-      this.speed = totalSpeed;
-      return this.speed;
+    if (this.speed - value >= 0) {
+      return (this.speed -= value);
     }
     console.log(
       'Операция не была проведена поскольку итоговая скорость будет меньше 0',
