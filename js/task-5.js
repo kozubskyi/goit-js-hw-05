@@ -9,6 +9,11 @@ class Car {
       `maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car.price}`,
     );
   }
+  // static getSpecs({ speed = 0, price, maxSpeed, isOn = false, distance = 0 }) {
+  //   console.log(
+  //     `maxSpeed: ${maxSpeed}, speed: ${speed}, isOn: ${isOn}, distance: ${distance}, price: ${price}`,
+  //   );
+  // }
 
   /*
    * Конструктор получает объект настроек.
@@ -20,20 +25,20 @@ class Car {
    *  isOn - заведен ли автомобиль, значения true или false. Изначально false
    *  distance - общий киллометраж, изначально 0
    */
-  constructor(car) {
-    this.speed = 0;
-    this._price = car.price;
-    this.maxSpeed = car.maxSpeed;
-    this.isOn = false;
-    this.distance = 0;
-  }
-  // constructor({ speed = 0, price, maxSpeed, isOn = false, distance = 0}) {
-  //   this.speed = speed;
-  //   this._price = price;
-  //   this.maxSpeed = maxSpeed;
-  //   this.isOn = isOn;
-  //   this.distance = distance
+  // constructor(car) {
+  //   this.speed = 0;
+  //   this._price = car.price;
+  //   this.maxSpeed = car.maxSpeed;
+  //   this.isOn = false;
+  //   this.distance = 0;
   // }
+  constructor({ speed = 0, price, maxSpeed, isOn = false, distance = 0}) {
+    this.speed = speed;
+    this._price = price;
+    this.maxSpeed = maxSpeed;
+    this.isOn = isOn;
+    this.distance = distance
+  }
 
   /*
    * Добавь геттер и сеттер для свойства price,
